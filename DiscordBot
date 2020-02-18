@@ -1,0 +1,38 @@
+# id=675614676628930570
+# token=Njc1NjE0Njc2NjI4OTMwNTcw.Xj5t0A.LQU1Mq8pSrQgtzQO3eDJ16_Dpl4
+# 75776
+
+# https://discordapp.com/oauth2/authorize?client_id=675614676628930570&scope=bot&permissions=75776
+
+import discord
+
+client=discord.Client()
+
+@client.event
+async def on_ready():
+    print(f"logged in as {client.user}")
+
+@client.event
+async def on_message(message):
+    print(f"{message.channel}: {message.author}: {message.author.name}: {message.content}")
+    bot_guild=client.get_guild(471297689246498817)
+
+    if "hi" in message.content.lower():
+        await message.channel.send("Kaisa hai "+message.author.name+" noob")
+    elif "bye" in message.content.lower():
+        await message.channel.send("Nikal "+message.author.name+" pehli fursat mein")
+    elif "!getlost" in message.content.lower():
+        await client.close()
+    elif "member_count" == message.content.lower():
+        await message.channel.send(f"```{bot_guild.member_count}```")
+    elif 'happy birthday' in message.content.lower():
+        await message.channel.send('Happy Birthday! ')
+
+@client.event
+async def on_member_join(member):
+    await member.create_dm()
+    await member.dm_channel.send(f'Aa madarchod {member.name}, tera hi intezaar tha')
+
+
+client.run("Njc1NjE0Njc2NjI4OTMwNTcw.Xj5t0A.LQU1Mq8pSrQgtzQO3eDJ16_Dpl4")
+
