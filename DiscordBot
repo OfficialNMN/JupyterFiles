@@ -1,9 +1,3 @@
-# id=675614676628930570
-# token=Njc1NjE0Njc2NjI4OTMwNTcw.Xj5t0A.LQU1Mq8pSrQgtzQO3eDJ16_Dpl4
-# 75776
-
-# https://discordapp.com/oauth2/authorize?client_id=675614676628930570&scope=bot&permissions=75776
-
 import discord
 
 client=discord.Client()
@@ -15,7 +9,7 @@ async def on_ready():
 @client.event
 async def on_message(message):
     print(f"{message.channel}: {message.author}: {message.author.name}: {message.content}")
-    bot_guild=client.get_guild(471297689246498817)
+    bot_guild=client.get_guild(guild_no.)
 
     if "hi" in message.content.lower():
         await message.channel.send("Kaisa hai "+message.author.name+" noob")
@@ -31,8 +25,8 @@ async def on_message(message):
 @client.event
 async def on_member_join(member):
     await member.create_dm()
-    await member.dm_channel.send(f'Aa madarchod {member.name}, tera hi intezaar tha')
+    await member.dm_channel.send(f'Aaja {member.name}, tera hi intezaar tha')
 
 
-client.run("Njc1NjE0Njc2NjI4OTMwNTcw.Xj5t0A.LQU1Mq8pSrQgtzQO3eDJ16_Dpl4")
+client.run("token_no")
 
